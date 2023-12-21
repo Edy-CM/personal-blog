@@ -84,10 +84,6 @@ nav li:not(:last-child) {
   ". . .";
 }
 
-.hero * {
-  background-color: red;
-}
-
 .hero .date {
   justify-self: start;
   align-self: end;
