@@ -6,19 +6,19 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
   width: 100vw;
-  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #343a40;
   background-color: white;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar{
   width: 0px;
   display: none;
 }
 
-/* Functional Classes */
-.hidden {
-  display: none;
-}
+main { flex-grow: 1; }
 
 /* Header */
 .nav-bar {
@@ -73,21 +73,7 @@ nav li:not(:last-child) {
   color: #354f52;
 }
 
-/* Body content */
-.about-me { padding: 1em; }
-.about-me h1 { font-weight: 700; }
-.about-me p { line-height: 1.5; }
-
-.profile-picture {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
 /* Posts */
-.recent-container { text-align: center; }
-.posts            { text-align: start; }
-
 .posts {
   display: flex;
   flex-direction: column;
@@ -136,7 +122,6 @@ word-wrap: wrap;
   text-decoration: underline;
 }
 
-/* footer */
 footer {
   margin-top: 1.5em;
   background-color: #202020;
@@ -150,6 +135,9 @@ footer h4 {
   margin-bottom: 0;
 }
 
-#copy {
+#copyright {
   color: #D7D7D7
 }
+
+/* Functional Classes */
+.hidden { display: none; }

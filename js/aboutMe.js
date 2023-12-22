@@ -49,7 +49,7 @@ function renderPost(post, attribute=false) {
   newPost.innerHTML = `
     <p class="post-image-container"></p>
     <p class="post-date">${date}</p>
-    <h1 class="post-title"><a href="article.html">${title}</a></h1>
+    <h1 class="post-title"><a href="article.html?id=${postId}">${title}</a></h1>
     <p class="post-description">${description}</p>
   `
   newPost.querySelector("p").appendChild(coverImage);

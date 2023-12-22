@@ -27,6 +27,7 @@ CKEDITOR.replace('modalContent',
           elements: {
             img: function (element) {
               // Add your class to the image tag
+              delete element.attributes.style
               element.attributes.class = 'post-image';
             }
           }
@@ -34,7 +35,7 @@ CKEDITOR.replace('modalContent',
       }
     }
   })
-
+postsEl.removeAttribute
 // Al hacer click en el boton, se oculta a si mismo y muestra el formulario.
 addPosts.addEventListener("click", function(){
   addPostModal.classList.toggle("hidden")
@@ -167,7 +168,7 @@ function renderPost(post, attribute=false) {
   newPost.innerHTML = `
     <p class="post-image-container"></p>
     <p class="post-date">${date}</p>
-    <h1 class="post-title"><a href="article.html">${title}</a></h1>
+    <h1 class="post-title"><a href="article.html?id=${postId}">${title}</a></h1>
     <p class="post-description">${description}</p>
   `;
 
@@ -198,3 +199,5 @@ function createDefaultImage() {
   defaultImage.classList.add("post-image")
   return defaultImage;
 }
+
+history.replaceState({}, null, "/index.html")
