@@ -9,6 +9,11 @@
       max-width: 770px;
       object-fit: cover;
     }
+    #par p img {
+      max-width: 500px;
+      max-height: 500px;
+      object-fit: cover;
+    }
   </style>
   <!-- Include CKEditor via CDN -->
   <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
@@ -19,7 +24,19 @@
   <button id="btn">Ok</button>
   <div id="par"></div>
   <script>
-    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor1', {
+      on: {
+        instanceReady: function(ev) {
+          ev.editor.dataProcessor.htmlFilter.addRules({
+            elements: {
+              img: function (element) {
+                element.attributes.class = "images"
+              }
+            }
+          })
+        }
+      }
+    });
     document.getElementById("btn").addEventListener("click", function(){
       const div = document.getElementById("par")
       div.innerHTML = CKEDITOR.instances.editor1.getData()

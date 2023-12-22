@@ -46,20 +46,21 @@
     <h1>New Post</h1>
     <form>
       <label for="title">Post Title</label>
-      <input type="text" name="title" class="modal-title input" placeholder="Post title">
+      <input type="text" name="title" class="modal-title input" placeholder="Post title" required>
       <label for="modal-description">Post description</label>
       <textarea name="modal-description" 
-        class="modal-description input" 
-        id="modal-description" 
-        cols="30" rows="10"
-        placeholder="Post description"></textarea>
-        <label for="modal-content">Post content</label>
-        <textarea name="modal-content" 
-        id="modalContent" 
-        cols="30" rows="10"
-        placeholder="Text content"></textarea>
-        <button type="submit">SUBMIT</button>
-        <button type="reset">CANCEL</button>
+      class="modal-description input" 
+      id="modal-description" 
+      cols="30" rows="10"
+      placeholder="Post description" maxlength="250" required></textarea>
+      <p id="counter">250/250</p>
+      <label for="modal-content">Post content</label>
+      <textarea name="modal-content" 
+      id="modalContent" 
+      cols="30" rows="10"
+      placeholder="Text content" required></textarea>
+      <button type="submit">SUBMIT</button>
+      <button type="reset">CANCEL</button>
     </form>
   </div>
   <button class="add-post" id="add-post"><i class="fa-solid fa-blog"></i></button>
