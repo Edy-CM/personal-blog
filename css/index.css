@@ -208,6 +208,10 @@ form p {
 
 /* Post */
 .posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
   background-color: white;
 }
 
@@ -251,6 +255,22 @@ word-wrap: wrap; }
   text-decoration: underline;
 }
 
+/* Show more btn */
+.show-more {
+  margin: 1em auto;
+  width: 90vw;
+  padding: 0.7em 0.75em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #00afb9;
+}
+
+.show-more:hover {
+  background-color: #0081a7;
+}
 
 /* Functional Classes */
 .hidden { display: none; }
