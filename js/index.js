@@ -187,6 +187,9 @@ function renderPost(post, attribute=false) {
   postsEl.appendChild(newPost);
 }
 
+let copyYear = new Date().getFullYear()
+document.getElementById("copyright").textContent = `Copyright @${copyYear}`
+
 // Crea una imagen default para las portadas del post.
 function createDefaultImage() {
   const defaultImage = document.createElement("img");

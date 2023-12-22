@@ -6,13 +6,19 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
   width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: #343a40;
+  background-color: white;
 }
 
 body::-webkit-scrollbar{
   width: 0px;
   display: none;
 }
+
+main { flex-grow: 1; }
 
 /* Header */
 .nav-bar {
@@ -286,6 +292,24 @@ word-wrap: wrap;
   background-color: #0081a7;
 }
 
+/* footer */
+footer {
+  margin-top: 1.5em;
+  background-color: #202020;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+}
+
+footer h4 {
+  color: #ECECEC;
+  margin-bottom: 0;
+}
+
+#copyright {
+  color: #D7D7D7
+}
+
 /* Functional Classes */
 .hidden { display: none; }
 
@@ -298,7 +322,7 @@ word-wrap: wrap;
     display: flex;
     font-size: 0.85rem;
     position: absolute;
-    top: 0px;
+    top: 1em;
     right: 0.8125em;
   }
   .nav-links ul {
