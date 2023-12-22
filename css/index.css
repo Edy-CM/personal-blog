@@ -217,18 +217,19 @@ form p {
 
 .post {
   display: grid;
-  grid-template-columns: 1em auto 1em;
+  grid-template-columns: 1em 1fr 1fr 1em;
   grid-template-areas: 
-  ". imagePost ."
-  ". post-date ."
-  ". post-title ."
-  ". post-description ."
+  ". imagePost imagePost ."
+  ". post-date remove-btn ."
+  ". post-title post-title ."
+  ". post-description post-description ."
 }
 
 .post-image-container,
 .post-date,
 .post-title,
-.post-description {
+.post-description,
+.remove-btn {
   margin: 0; margin-top: 10px
 }
 
@@ -239,12 +240,25 @@ form p {
 }
 
 .post-image-container { grid-area: imagePost; width: 90vw; }
-.post-date            { grid-area: post-date;  }
+.post-date            { grid-area: post-date; }
 .post-title           { grid-area: post-title;  }
-.post-description     { grid-area: post-description; 
+.post-description     { grid-area: post-description;
   color: #505050; 
   white-space: pre-wrap;
-word-wrap: wrap; }
+word-wrap: wrap; 
+}
+.remove-btn { 
+  justify-self: end;
+  grid-area: remove-btn;
+  font-size: 1.25rem;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  width: fit-content;
+}
+.remove-btn:hover {
+  color: red;
+}
 
 .post-title a {
   color: #141414;

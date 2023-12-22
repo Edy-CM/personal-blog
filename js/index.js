@@ -115,8 +115,7 @@ onValue(postsTbl, function(snapshots){
   const showMore = document.createElement("button")
   showMore.classList.add("show-more")
   
-  const showMoreContent = !morePosts ? "Show more" : "Show less"
-  showMore.textContent = showMoreContent
+  showMore.textContent = "Show more"
 
   postsEl.appendChild(showMore)
 
@@ -168,11 +167,22 @@ function renderPost(post, attribute=false) {
   newPost.innerHTML = `
     <p class="post-image-container"></p>
     <p class="post-date">${date}</p>
-    <h1 class="post-title"><a href="article.html" data-post-id="${postId}">${title}</a></h1>
+    <h1 class="post-title"><a href="article.html">${title}</a></h1>
     <p class="post-description">${description}</p>
   `;
 
   // Append the actual image element to the newPost container
+  const removeBtn = document.createElement("button")
+  removeBtn.classList.add("remove-btn")
+  removeBtn.setAttribute(`data-post-id`, postId)
+  removeBtn.innerHTML = '<i class="fa-regular fa-trash-can"></i>'
+  newPost.appendChild(removeBtn)
+
+  removeBtn.addEventListener("click", function(){
+    const location = ref(database, `Tbl_posts/${postId}`)
+    remove(location)
+  })
+
   newPost.querySelector("p").appendChild(coverImage);
   postsEl.appendChild(newPost);
 }
