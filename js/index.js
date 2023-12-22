@@ -127,6 +127,10 @@ function renderPost(post) {
     ? firstImage
     : createDefaultImage(); // Create a default image element if no image is found
 
+    if (coverImage.hasAttribute("style")) {
+      coverImage.removeAttribute("style")
+    }
+
   let newPost = document.createElement("div");
   newPost.classList.add("post")
   newPost.innerHTML = `

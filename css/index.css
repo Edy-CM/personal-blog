@@ -234,7 +234,7 @@ form p {
   object-fit: cover;
 }
 
-.post-image-container { grid-area: imagePost;  }
+.post-image-container { grid-area: imagePost; width: 90vw; }
 .post-date            { grid-area: post-date;  }
 .post-title           { grid-area: post-title;  }
 .post-description     { grid-area: post-description; 
