@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <link rel="stylesheet" href="css/index.css">
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
   <title>My Learning Journal</title>
+  <!-- CK Editor -->
+  <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -27,17 +31,38 @@
   <main>
     <section class="hero" id="hero">
       <p class="date">21/12/2023</p>
-      <h1 class="title">My new journey as a self-taught FrontEnd dev.</h1>
+      <h1 class="title"><a href="article.html">My new journey as a self-taught FrontEnd dev.</a></h1>
       <p class="description">After several months of learning how to code on my own,
         I've made the big jump over to learning web dev in order
         to become a Full Stack Developer, right now focusing mainly
         in the FrontEnd area.
       </p>
     </section>
-    <section class="latest" id="latest">
+    <section class="posts" id="posts">
 
     </section>
   </main>
+  <div class="add-post-modal hidden" id="add-post-modal">
+    <h1>New Post</h1>
+    <form>
+      <label for="title">Post Title</label>
+      <input type="text" name="title" class="modal-title input" placeholder="Post title">
+      <label for="modal-description">Post description</label>
+      <textarea name="modal-description" 
+        class="modal-description input" 
+        id="modal-description" 
+        cols="30" rows="10"
+        placeholder="Post description"></textarea>
+        <label for="modal-content">Post content</label>
+        <textarea name="modal-content" 
+        id="modalContent" 
+        cols="30" rows="10"
+        placeholder="Text content"></textarea>
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CANCEL</button>
+    </form>
+  </div>
+  <button class="add-post" id="add-post"><i class="fa-solid fa-blog"></i></button>
   <script src="https://kit.fontawesome.com/fa4d93c482.js" crossorigin="anonymous"></script>
   <script src="js/index.js" type="module"></script>
 </body>

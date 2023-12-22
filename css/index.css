@@ -9,11 +9,6 @@ body {
   color: #343a40;
 }
 
-/* Functional Classes */
-.hidden {
-  display: none;
-}
-
 /* Header */
 .nav-bar {
   display: flex;
@@ -95,6 +90,15 @@ nav li:not(:last-child) {
   grid-area: title;
 }
 
+.hero a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero a:hover {
+  text-decoration: underline;
+}
+
 .hero .description {
   font-size: 1rem;
   grid-area: description;
@@ -127,4 +131,86 @@ nav li:not(:last-child) {
   .nav-links ul li {
     border: none;
   }
+}
+
+/* Add Post */
+.add-post {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  position: fixed;
+  border: none;
+  border-radius: 50%;
+  bottom: 0.9em;
+  right: 0.9em;
+  color: white;
+  background-color: #ef233c;
+  transition: background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.add-post:focus,
+.add-post:hover {
+  background-color: #d90429;
+  transform: scale(1.2)
+}
+
+textarea {
+  resize: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.add-post-modal {
+  overflow: auto;
+  width: 100vw;
+  height: 100%;
+  background-color: #5e548e;
+  position:fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.input {
+  border-radius: 10px;
+  min-height: 30px;
+}
+
+.add-post-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-post-modal::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+
+.add-post-modal form label {
+  font-size: 1.75rem;
+  text-transform: capitalize;
+}
+
+.add-post-modal form button {
+  padding: 10px;
+  font-weight: 700;
+  color: white;
+  background-color: #be95c4;
+  border: none;
+  border-radius: 25px;
+}
+
+.add-post-modal form button:focus,
+.add-post-modal form button:hover {
+  background-color: #9f86c0;
+}
+
+/* Functional Classes */
+.hidden {
+  display: none;
 }
