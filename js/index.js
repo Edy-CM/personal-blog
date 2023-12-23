@@ -17,6 +17,8 @@ const counter  = document.getElementById("counter")
 const postsEl = document.getElementById("posts")
 let morePosts = false
 
+clearPostsEl()
+
 // Reemplaza el text area de "modalContent" por el editor de texto de CKEditor.
 CKEDITOR.replace('modalContent',
   {
@@ -27,7 +29,6 @@ CKEDITOR.replace('modalContent',
           elements: {
             img: function (element) {
               // Add your class to the image tag
-              delete element.attributes.style
               element.attributes.class = 'post-image';
             }
           }
@@ -35,7 +36,6 @@ CKEDITOR.replace('modalContent',
       }
     }
   })
-postsEl.removeAttribute
 // Al hacer click en el boton, se oculta a si mismo y muestra el formulario.
 addPosts.addEventListener("click", function(){
   addPostModal.classList.toggle("hidden")
@@ -113,12 +113,7 @@ onValue(postsTbl, function(snapshots){
     renderPost(post)
   })
 
-  const showMore = document.createElement("button")
-  showMore.classList.add("show-more")
-  
-  showMore.textContent = "Show more"
-
-  postsEl.appendChild(showMore)
+  const showMore = document.getElementById("show-more")
 
   if (postArray.length > 6) {
     showMore.classList.remove("hidden")
@@ -158,8 +153,9 @@ function renderPost(post, attribute=false) {
     ? firstImage
     : createDefaultImage(); // Create a default image element if no image is found
 
-    if (coverImage.hasAttribute("style")) {
+    if (coverImage.attributes.style) {
       coverImage.removeAttribute("style")
+      coverImage.classList.add("banner")
     }
 
   let newPost = document.createElement("div");

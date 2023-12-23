@@ -213,12 +213,21 @@ form p {
 }
 
 /* Post */
+.recent-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .posts {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
   background-color: white;
+}
+
+.banner {
+  max-height: 227px;
 }
 
 .post {
@@ -240,12 +249,12 @@ form p {
 }
 
 .post-image {
-  width: 90vw;
+  width: 100%;
   max-height: 350px;
   object-fit: cover;
 }
 
-.post-image-container { grid-area: imagePost; width: 90vw; }
+.post-image-container { grid-area: imagePost; width: 100%; }
 .post-date            { grid-area: post-date; }
 .post-title           { grid-area: post-title;  }
 .post-description     { grid-area: post-description;
@@ -331,4 +340,9 @@ footer h4 {
     gap: 20px;
   }
   .nav-links ul li { border: none; }
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }

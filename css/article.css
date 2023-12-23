@@ -98,13 +98,16 @@ nav li:not(:last-child) {
 .post-description,
 .remove-btn { margin: 0; margin-top: 10px }
 
+.banner {
+  max-height: 227px;
+}
+
 .post-image {
-  width: 90vw;
-  max-height: 350px;
+  width: 100%;
   object-fit: cover;
 }
 
-.post-image-container { grid-area: imagePost; width: 90vw; }
+.post-image-container { grid-area: imagePost; width: 100%; }
 .post-date            { grid-area: post-date; }
 .post-title           { grid-area: post-title;  }
 .post-description     { grid-area: post-description;
@@ -162,3 +165,37 @@ footer h4 {
 
 /* Functional Classes */
 .hidden { display: none; }
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .nav-bar #hamburger { display: none }
+  .nav-links {
+    margin: 0;
+    height: 45px;
+    display: flex;
+    font-size: 0.85rem;
+    position: absolute;
+    top: 1em;
+    right: 0.8125em;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .nav-links ul li { border: none; }
+  
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  }
+
+  .recent-container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .article {
+    padding: 1.25em 5.5em;
+  }
+}

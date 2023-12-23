@@ -39,8 +39,9 @@ function renderPost(post, attribute=false) {
     ? firstImage
     : createDefaultImage(); // Create a default image element if no image is found
 
-    if (coverImage.hasAttribute("style")) {
+    if (coverImage.attributes.style) {
       coverImage.removeAttribute("style")
+      coverImage.classList.add("banner")
     }
 
   let newPost = document.createElement("div");

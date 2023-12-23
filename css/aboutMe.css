@@ -112,19 +112,23 @@ nav li:not(:last-child) {
 .post-description,
 .remove-btn { margin: 0; margin-top: 10px }
 
+.banner {
+  max-height: 227px;
+}
+
 .post-image {
-  width: 90vw;
+  width: 100%;
   max-height: 350px;
   object-fit: cover;
 }
 
-.post-image-container { grid-area: imagePost; width: 90vw; }
+.post-image-container { grid-area: imagePost; width: 100%; }
 .post-date            { grid-area: post-date; }
 .post-title           { grid-area: post-title;  }
 .post-description     { grid-area: post-description;
   color: #505050; 
   white-space: pre-wrap;
-word-wrap: wrap; 
+  word-wrap: wrap; 
 }
 
 .post-title a {
@@ -152,4 +156,45 @@ footer h4 {
 
 #copy {
   color: #D7D7D7
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .nav-bar #hamburger { display: none }
+  .nav-links {
+    margin: 0;
+    height: 45px;
+    display: flex;
+    font-size: 0.85rem;
+    position: absolute;
+    top: 1em;
+    right: 0.8125em;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .nav-links ul li { border: none; }
+
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  }
+
+  .presentation {
+    padding: 0 1.75em;
+    display: flex;
+    gap: 2.5em;
+  }
+
+  .how-do-i {
+    margin-top: 2.75em;
+    padding: 0 4.25em;
+  }
+
+  .recent-container {
+    width: 90vw;
+    margin: 0 auto;
+  }
 }
